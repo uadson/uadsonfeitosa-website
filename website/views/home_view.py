@@ -1,9 +1,8 @@
 from django.shortcuts import render, HttpResponse
 
-from django.views.generic import View
+from django.views.generic import TemplateView
 
 
-class TestView(View):
+class HomeView(TemplateView):
 	
-	def get(self, request, *args, **kwargs):
-		return HttpResponse('Hello Dev')
+	template_name = 'website/home.html'
