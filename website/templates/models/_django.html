@@ -1,0 +1,61 @@
+{% load static %}
+<a href="#djSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-dark">
+   <i><img src="{% static 'assets/img/icon-dj-32.png' %}"></i>
+    Django
+</a>
+<ul class="collapse list-unstyled" id="djSubmenu">
+
+    <li>
+        <a href="#estrutura" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-dark">
+            <i class="fas fa-copy"></i>
+            Estrutura - MTV
+        </a>
+        <ul class="collapse list-unstyled" id="estrutura">
+            <li>
+                <a href="#">Models</a>
+            </li>
+            <li>
+                <a href="#">Templates</a>
+            </li>
+            <li>
+                <a href="#">Views</a>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#fbv" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-dark">
+            <i class="fas fa-copy"></i>
+            Functions Based Views
+        </a>
+        <ul class="collapse list-unstyled" id="fbv">
+            <li>
+                <a href="#">Estrutura</a>
+            </li>
+            <li>
+                <a href="#">Funções Recursivas</a>
+            </li>
+            <li>
+                <a href="#">Funções Geradoras</a>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#cbv" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-dark">
+            <i class="fas fa-copy"></i>
+            Class Based Views
+        </a>
+        <ul class="collapse list-unstyled" id="cbv">
+            <li>
+                <a href="#">Classes</a>
+            </li>
+            <li>
+                <a href="#">Atributos</a>
+            </li>
+            <li>
+                <a href="#">Métodos</a>
+            </li>
+        </ul>
+    </li>
+</ul>
