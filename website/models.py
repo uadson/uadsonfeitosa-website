@@ -15,6 +15,12 @@ class Base(models.Model):
 
 
 class Post(Base):
+    SECTION_CHOICES = (
+        ('home', 'Home'),
+        ('python', 'Python'),
+        ('django', 'Django')
+    )
+
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
@@ -30,6 +36,7 @@ class Post(Base):
         related_name='blog_posts',
         verbose_name='Autor')
     body = models.TextField('Texto')
+    section = models.CharField('Seção', max_length=6, choices=SECTION_CHOICES)
     publish = models.DateTimeField('Publicação', default=timezone.now)
     status = models.CharField(
         'Status',
