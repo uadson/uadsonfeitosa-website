@@ -21,6 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # app website urls
-    path('', include('website.urls.home', namespace='website')),
-    path('detail/', include('website.urls.detail', namespace='website')),
+    path('', include('website.urls.main', namespace='website')),
 ]
