@@ -1,3 +1,10 @@
+# Deps Django
 asgiref==3.4.1
 Django==4.0
 sqlparse==0.4.2
+
+# Deps Staticfiles
+dj-static==0.0.6
+django-stdimage==5.3.0
+Pillow==9.0.1
+static3==0.7.0
