@@ -5,6 +5,8 @@ from core.models import User
 
 from django.urls import reverse
 
+from stdimage.models import StdImageField
+
 
 class Base(models.Model):
     created = models.DateTimeField('Data de Criação:', auto_now_add=True)
@@ -16,7 +18,7 @@ class Base(models.Model):
 
 class Post(Base):
     SECTION_CHOICES = (
-        ('home', 'Home'),
+        ('tutoriais', 'Tutoriais'),
         ('python', 'Python'),
         ('django', 'Django')
     )
@@ -35,8 +37,11 @@ class Post(Base):
         on_delete=models.PROTECT,
         related_name='blog_posts',
         verbose_name='Autor')
+    image = StdImageField(
+        'Imagem', upload_to='images',
+        variations={'thumb':{'width': 480, 'height': 480, 'crop': True}})
     body = models.TextField('Texto')
-    section = models.CharField('Seção', max_length=6, choices=SECTION_CHOICES)
+    section = models.CharField('Seção', max_length=9, choices=SECTION_CHOICES)
     publish = models.DateTimeField('Publicação', default=timezone.now)
     status = models.CharField(
         'Status',
