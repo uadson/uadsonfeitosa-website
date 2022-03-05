@@ -6,6 +6,7 @@ omit =
  */settings/*
  */manage.py
  */wsgi.py
+ */asgi.py
  */apps.py
  */admin.py
  */migrations/*
