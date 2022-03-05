@@ -1,0 +1,38 @@
+{% load static %}
+<section id="services" class="section-padding">
+<div class="container">
+  <div class="section-header text-center">
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+  </div>
+  <div class="row">
+
+    <!-- Projects item -->
+    {% for project in projects %}
+    <div class="col-md-6 col-lg-4 col-xs-12">
+ 
+    <!-- Card -->
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5><br>
+            <h6 class="card-text">Data: {{ project.create|date:'m/Y'}}</h6>
+            <h6 class="card-text">Última Atualização: {{ project.modified|date:'m/Y'}}</h6><br>
+            <details>
+                <summary style="color: blue;">Saiba mais</summary>
+                    <br><p class="card-text"><i>{{ project.description }}</i></p><br>
+                    <p class="card-text"><i>{{ project.responsabilities }}</i></p><br>
+                    <p class="card-text"><i>{{ project.tools }}</i></p><br>
+            </details><br>
+            {% if project.github_url %}
+            <a class="dev-icons" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer"><i><img src="{% static 'assets/img/github-logo_icon-icons.com_73546.ico' %}"></i></a>
+            {% endif %}
+
+            {% if project.url %}
+            <a class="dev-icons" href="{{ project.url }}" target="_blank" rel="noopener noreferrer"><i><img src="{% static 'assets/img/External_Link_icon-icons.com_55915.ico' %}"></i></a>
+            {% endif %}
+        </div>
+    </div><br>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
