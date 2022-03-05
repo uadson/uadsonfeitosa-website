@@ -2,7 +2,7 @@
 from django.contrib.auth import forms
 
 # Models
-from .models import User
+from core.models import User
 
 
 class UserChangeForm(forms.UserChangeForm):
